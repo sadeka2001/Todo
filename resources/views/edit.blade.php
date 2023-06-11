@@ -21,7 +21,7 @@
             @method('PUT')
             <div class="mb-3">
                 <label for="tittle" class="form-label">Tittle</label>
-                <input type="text" class="form-control" id="tittle" name="tittle" value="tittle">
+                <input type="text" class="form-control" id="tittle" name="tittle" value="{{ $task->tittle}}">
 
             </div>
             <div class="mb-3">
@@ -33,8 +33,7 @@
                 <select name="status" id="status"
                     class="form-label>
                     @foreach ($statusis as $status)
-                    <option value = "{{ $status['value'] }}"
-                    {{ $task->status === $status['value'] ? 'selected' : '' }}>{{ $status['label'] }} </option>
+                    <option value = "{{ $status['value'] }}" {{ $task->status === $status['value'] ? 'selected' : '' }}>{{ $status['label'] }} </option>
                     @endforeach
                 </select>
             </div>
